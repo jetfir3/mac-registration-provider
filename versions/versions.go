@@ -6,7 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
-	"strings"
+	// "strings"
 
 	"github.com/tidwall/gjson"
 )
@@ -27,11 +27,12 @@ func (v *Versions) UserAgent() string {
 }
 
 func getSoftwareName() string {
-	softwareName, err := exec.Command("sw_vers", "-productName").Output()
-	if err != nil {
-		panic(fmt.Errorf("error running sw_vers: %w", err))
-	}
-	return strings.TrimSpace(string(softwareName))
+	// softwareName, err := exec.Command("sw_vers", "-productName").Output()
+	// if err != nil {
+	//     panic(fmt.Errorf("error running sw_vers: %w", err))
+	// }
+	// return strings.TrimSpace(string(softwareName))
+	return "macOS"
 }
 
 func getSerialNumber() (serial, uuid string) {
